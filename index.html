@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scrollytelling template</title>
+	<script src="https://unpkg.com/enter-view"></script>
+</head>
+<style type="text/css">
+body, html {
+	font-family:"Helvetica-Neue", sans-serif;
+	top:0;
+	left:0;
+	margin:0;
+	color:#1d1d1d;
+}
+#featured {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  overflow:none;
+}
+.aligner {
+	max-width:80%;
+}
+#featured .title{
+	text-align:center;
+	margin-top:5%;
+	width:100%;
+}
+.title h2 {
+	font-size:1em;
+	font-weight:400;
+}
+#featured img {
+  width:100%;
+}
+#scroll {
+  font-stretch:expanded;
+  text-align:center;
+  width:80%;
+  position:absolute;
+  bottom:10%;
+  font-size:6em;
+  color:#1d1d1d;
+  cursor:pointer;
+  transition:0.5s all ease-in-out;
+  line-height:0.5em;
+}
+#scroll:hover {
+  transform:scale(1.2);
+  transform-origin:50% 30%;
+}
+.section{
+  opacity:0;
+  width:90%;
+  height:auto;
+  padding:5%;
+  margin-bottom:0%;
+  padding-bottom:0%;
+  line-height:2em;
+  transform:translateY(5em);
+  transition:0.5s ease-in-out;
+  margin:auto;
+}
+.section img {
+	width:100%;
+}
+.entered {
+  transform:translateY(0em);
+  opacity:1;
+}
+.tableauPlaceholder {
+	height:50vh;
+}
+.scrollpost {
+	width:100%;
+	padding:0;
+	margin:0;
+	overflow-x:scroll;
+	overflow-y:hidden;
+	white-space:nowrap;
+}
+.scrollpost img {
+	width:25%;
+	display:inline-block;
+	margin:0% 4% 0% 0%;
+}
+.open {
+	position:relative;
+		text-align:center;
+	margin:auto;
+}
+.open:hover .overlay{
+	opacity:0.8;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity:0;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	cursor:pointer;
+	transition:0.5s ease-in-out;
+}
+.open img {
+	width:80%;
+}
+
+.overlay h2 {
+	color:white;
+	background-color:none;
+	margin:auto;
+}
+#final {
+	margin-bottom:5%;
+}
+.open a {
+	text-decoration:none;
+	background-color:none;
+	padding:2% 4%;
+	cursor:pointer;
+	border:0.05em solid white;
+	transition:0.5s ease-in-out;
+}
+.open a:hover {
+	background-color:white;
+}
+.open a:hover h2{
+	color:#1d1d1d;
+}
+@media screen and (max-width:767px){
+	#featured img {
+		margin-left:-50%;
+		bottom:0;
+		position:absolute;
+		width:200%;
+		z-index:0;
+	}
+	#featured .title {
+		z-index:1;
+	}
+	.scrollpost img {
+		width:70%;
+	}
+}
+
+.image-container {
+    position: relative;
+    height: 100%;
+	width: 100%;
+}
+.image-container .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.image-container:hover .after {
+    display: block;
+    background: rgba(0, 0, 0, .6);
+}
+
+</style>
+<body>
+
+<div id="featured">
+	<div class="aligner">
+		<div class="title">
+		<h1>Beyond Supersize Me, A Look at The Numbers</h1>
+		</div>
+	  	<img src="assets/food-items/popular_menu_items-100.jpg"></br></br>
+	 	 <div id="scroll">&#xfe40;</div>	
+	</div>
+</div>
+
+<!-- Simple text intro -->
+<div class="section" id="first">
+	<h1>This is an exploration of which popular menu item would have the best cost/benefit ratio</h1>
+	<p>Cost/benefit is relative as we live different lives and have different requirements.</p>
+</div>
+
+<!-- About the data carousel -->
+<div class="section">
+	<h1>The data is based on McDonald's 2017 nutritional facts</h1>
+	<p>Sourced from: <a href="https://www.kaggle.com/mcdonalds/nutrition-facts" target="_blank">https://www.kaggle.com/mcdonalds/nutrition-facts	
+		</a></p>
+
+		<img src="assets/food-items/popular_menu_items_criteria-100.jpg">
+
+<div class="section">
+	<h1>Each menu item was high in sodium, and had a high calorie from fat ratio. The Baked Apple Pie and Medium French Fries had less than 1g of cholesterol, which was surprising.</h1>
+	<div class='tableauPlaceholder' id='viz1596980560735' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Nu&#47;NutritionalValueofPopularMenuItems&#47;NutritionalValue&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='NutritionalValueofPopularMenuItems&#47;NutritionalValue' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Nu&#47;NutritionalValueofPopularMenuItems&#47;NutritionalValue&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1596980560735');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.50)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+	</div>
+<!-- Tableau Public embed -->
+
+<div class="section">
+	<h1>When put into the context of % of Daily Value, the real impact to our bodies is more clear. On a sidenote, There are<a href="https://www.fastcompany.com/1672621/these-are-some-of-the-68-million-people-mcdonalds-serves-every-day" target="_blank"> 68 million people eating at a McDonald's everyday.</a></h1>
+	<div class='tableauPlaceholder' id='viz1596981086024' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DailyValueofPopularMenuItems&#47;DailyValue&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DailyValueofPopularMenuItems&#47;DailyValue' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;DailyValueofPopularMenuItems&#47;DailyValue&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1596981086024');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.50)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+	</div>
+
+<!-- About the data carousel -->
+<div class="section">
+	<h1>Think about calories in another way.</h1>
+	<p>If you were a 140 lbs person, who can run a 10 min/mile, this is a breakdown of how much running you'd have to do to burn off the calories of each popular menu item.</p>
+	<!-- the scrolling post holder -->
+	<div class="scrollpost">
+		<img src="assets/jog/01.mcgriddle-100.jpg">
+		<img src="assets/jog/02.apple_pie-100.jpg">
+		<img src="assets/jog/03.big_mac-100.jpg">
+		<img src="assets/jog/04.mcnuggets-100.jpg">
+		<img src="assets/jog/05.double_cheese-100.jpg">
+		<img src="assets/jog/06.egg_mcmuffin-100.jpg">
+		<img src="assets/jog/07.m_fries-100.jpg">
+		<img src="assets/jog/08.premium_salad-100.jpg">
+		<img src="assets/jog/09.snack_wrap-100.jpg">
+
+	</div>
+</div>
+
+<div class="section" id=final>
+	<h1>Based on: calories, calories from fat, sodium, cholesterol, % daily values, serving size, and personal preferences</h1>
+
+		<div class="image-container">
+    	<img src="assets/the_winner_is-100.jpg" />
+    	<div class="after"><img src="assets/results.jpg" /></div>
+</div>
+</div>
+
+
+</body>
+<script type="text/javascript">
+
+scroll=document.querySelector('#scroll');
+setup = document.querySelector('#first');
+scroll.onclick=function() {
+    first.scrollIntoView({ 
+    behavior: 'smooth',
+    block: "start",
+  });
+};
+
+enterView({
+  selector: '.section',
+  enter: function(el) {
+    el.classList.add('entered');
+  },
+  exit: function(el) {
+    el.classList.remove('entered');
+  },
+  progress: function(el, progress) {
+
+  },
+  offset: 0.2, // enter at middle of viewport
+});
+
+</script>
+</html>
